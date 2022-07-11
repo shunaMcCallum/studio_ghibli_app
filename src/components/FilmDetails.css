@@ -1,0 +1,34 @@
+.film-detail {
+    display: flex;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#film-image {
+    width: 350px;
+    display: flex;
+    margin-right: 100px;
+}
+
+.film-content {
+    margin-left: 33px;
+}
+
+#film-title {
+    margin-bottom: 0px;
+}
+
+#film-original-title {
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.film-para {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#synopsis {
+    margin-bottom: 5px;
+}
+

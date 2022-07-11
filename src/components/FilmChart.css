@@ -1,0 +1,15 @@
+.charts {
+    margin-bottom: 30px;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.chart1 {
+    justify-self: space-around;
+    margin-right: -250px;
+    margin-left: 150px;
+}
+
+.chart2 {
+    justify-content: space-around;
+}

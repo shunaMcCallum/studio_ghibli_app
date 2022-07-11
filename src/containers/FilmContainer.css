@@ -1,0 +1,22 @@
+.film-box {
+    margin-left: 25px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;   
+    flex-direction: column;
+    background-color: rgb(247, 247, 247);
+}
+
+.page-header {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+#header-image {
+    width: 25%;
+    height: 25%;
+}
+
+#header-text {
+    align-self: center;
+    margin-left: 195px;
+}
