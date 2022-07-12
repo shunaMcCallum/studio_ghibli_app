@@ -5,6 +5,7 @@ import HomePageContainer from './containers/HomePageContainer';
 import FilmContainer from './containers/FilmContainer';
 import ChartContainer from './containers/ChartContainer';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -16,17 +17,20 @@ function App() {
   }, [])
 
   return (
-    <div className="app" style={{
-      backgroundImage: `url(https://cdn.vox-cdn.com/thumbor/s2_cd1uqU2wT_uy6vx4-GRESV8k=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19996673/Studio_Ghibli_Logo.jpg)`
-    }}>
+    <div>
       <Router>
         <NavBar />
+
         <Routes>
           <Route exact path="/" element={<HomePageContainer />} />
           <Route exact path="/films" element={<FilmContainer films={films} />} />
           <Route exact path="/charts" element={<ChartContainer films={films} />} />
+
         </Routes>
+        <Footer />
+
       </Router>
+
     </div>
   );
 }

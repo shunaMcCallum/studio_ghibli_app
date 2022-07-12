@@ -35,7 +35,7 @@ const NavBar = () => {
                 </div>
                 <div className="nav-bar-header">
                     <div>
-                        <h2> 株式会社スタジオジブリ </h2>
+                        <h1> 株式会社スタジオジブリ </h1>
                         <h1> Studio Ghibli </h1>
                     </div>
                 </div>
