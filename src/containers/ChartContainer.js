@@ -1,15 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import FilmChart from '../components/FilmChart';
+import ChartSelect from '../components/ChartSelect';
+import './ChartContainer.css';
 
 const ChartContainer = ({ films }) => {
     
+    const [selectedChart, setSelectedChart] = useState([]);
 
+    const handleChartSelect = (chart) => {
+        setSelectedChart(chart);
+    }
 
-    const getFilmRatings = ((films) => {
+    const pieChartData = ((films) => {
         const ratings = [];
 
         for (const film of films) {
-            ratings.push(film.rt_score)
+            ratings.push(film.rt_score);
         }
 
         const array0to60 = ratings.filter(rating => rating < 61);
@@ -28,7 +34,7 @@ const ChartContainer = ({ films }) => {
         return masterArray;
     });
 
-    const getFilmRatings2 = ((films) => {
+    const scatterChartData = ((films) => {
         let ratings = [["Release Date", "Rotten Tomato Score"]];
 
         for (const film of films) {
@@ -36,12 +42,27 @@ const ChartContainer = ({ films }) => {
             ratings.push(result)
         }
 
-        return ratings
+        return ratings;
+    });
+
+    const lineChartData = ((films) => {
+        let ratings = [["Release Date", "Film Length (mins)"]];
+        
+        for (const film of films) {
+            const result = [film.release_date, Number(film.running_time)]
+            ratings.push(result)
+        }
+
+        return ratings;
     });
 
     return (
-        <div >
-            <FilmChart films={films} getFilmRatings={getFilmRatings} getFilmRatings2={getFilmRatings2} />
+        <div className="chart-container">
+            <h2>Welcome to the Charts Page!</h2>
+            <p>Choose a chart from the dropdown below to see some really interesting Studio Ghibli film statistics!</p>
+            <ChartSelect onChartSelect={handleChartSelect} />
+            {selectedChart ? < FilmChart selectedChart={selectedChart} films={films} pieChartData={pieChartData}
+                scatterChartData={scatterChartData} lineChartData={lineChartData} /> : null}
         </div>
     );
 }
