@@ -38,7 +38,7 @@ const HomePageContainer = () => {
                     own production company together and invited Takahata to join them.</p>
             <img className="image-2" src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2020%2F05%2Fstudio-ghibli-museum-virtual-tour-japan-tw.jpg?w=960&cbr=1&q=90&fit=max" />
             <p className="history-para2">The name "Ghibli" was chosen by Miyazaki from the Italian noun "ghibli", based on the Libyan Arabic name for hot desert wind, the idea
-                    being that the studio would "blod a new wind throug hthe anime industry."</p>
+                    being that the studio would "blow a new wind throug hthe anime industry."</p>
             </div>
 
         </div>

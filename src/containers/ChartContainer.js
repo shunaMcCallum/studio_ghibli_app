@@ -29,32 +29,45 @@ const ChartContainer = ({ films }) => {
         const array3 = ["71 - 80", array71to80.length];
         const array4 = ["81 - 90", array81to90.length];
         const array5 = ["91 - 100", array91to100.length];
-        const masterArray = [["Rating Range", "Rating"], array1, array2, array3, array4, array5];
+        const data = [["Rating Range", "Rating"], array1, array2, array3, array4, array5];
 
-        return masterArray;
+        return data;
     });
 
     const scatterChartData = ((films) => {
-        let ratings = [["Release Date", "Rotten Tomato Score"]];
+        let data = [["Release Date", "Rotten Tomato Score"]];
 
         for (const film of films) {
-            const result = [film.release_date, Number(film.rt_score)]
-            ratings.push(result)
+            const result = [`${film.release_date} (${film.title})`, Number(film.rt_score)]
+            data.push(result)
         }
 
-        return ratings;
+        return data;
     });
 
     const lineChartData = ((films) => {
-        let ratings = [["Release Date", "Film Length (mins)"]];
+        let data = [["Release Date", "Film Length (mins)"]];
         
         for (const film of films) {
-            const result = [film.release_date, Number(film.running_time)]
-            ratings.push(result)
+            const result = [`${ film.release_date} (${film.title})`, Number(film.running_time)]
+            data.push(result)
         }
 
-        return ratings;
+        return data;
     });
+
+    const bubbleChartData = ((films) => {
+        let data = [["Title", "Release Date", "Rotten Tomato Score", "Rotten Tomato Score", "Length"]]
+
+        for (const film of films) {
+            const result = [film.title, Number(film.release_date), Number(film.rt_score), Number(film.rt_score),  Number(film.running_time)]
+            data.push(result)
+        }
+
+        return data;
+        
+    })
+
 
     return (
         <div className="chart-container">
@@ -62,7 +75,7 @@ const ChartContainer = ({ films }) => {
             <p>Choose a chart from the dropdown below to see some really interesting Studio Ghibli film statistics!</p>
             <ChartSelect onChartSelect={handleChartSelect} />
             {selectedChart ? < FilmChart selectedChart={selectedChart} films={films} pieChartData={pieChartData}
-                scatterChartData={scatterChartData} lineChartData={lineChartData} /> : null}
+                scatterChartData={scatterChartData} lineChartData={lineChartData} bubbleChartData={bubbleChartData} /> : null}
         </div>
     );
 }

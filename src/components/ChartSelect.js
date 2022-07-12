@@ -15,6 +15,7 @@ const ChartSelect = ({onChartSelect}) => {
             <option value="chart1">Pie Chart</option>
             <option value="chart2">Scatter Chart</option>
             <option value="chart3">Line Chart</option>
+            <option value="chart4">Bubble Chart</option>
         </select>
     );
 }
