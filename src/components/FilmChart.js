@@ -32,6 +32,7 @@ const FilmChart = ({ getFilmRatings, films, getFilmRatings2 }) => {
                 width="70%"
                 height={"250px"}
             />
+            <p>This chart breaks Rotten Tomato scores into four different ranges and shows the proportion of Studio Ghibli films whose ratings fall into each range.</p>
 
             <Chart className="chart2"
                 chartType="ScatterChart"
@@ -41,6 +42,7 @@ const FilmChart = ({ getFilmRatings, films, getFilmRatings2 }) => {
                 options={options2}
                 legendToggle
             />
+            <p>This chart shows the Rotten Tomato rating for each Studio Ghibli film released over the years.</p>
 
         </div>
     );

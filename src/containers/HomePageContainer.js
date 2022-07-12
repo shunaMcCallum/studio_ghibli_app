@@ -4,7 +4,7 @@ const HomePageContainer = () => {
 
 
     return (
-        <div >
+        <div className="homepage-container">
             <p>Welcome to the films of Studio Ghibli!</p>
             <p>Here you will find information on each of Studio Ghibli's films and some chart data just for extra kicks.</p>
             <br></br>
