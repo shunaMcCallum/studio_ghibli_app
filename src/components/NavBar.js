@@ -24,9 +24,8 @@ const NavBar = () => {
 
             <div>
                 <header>
-                    <h1>
-                       The Films of Studio Ghibli
-                    </h1>
+                    <h1> Studio Ghibli </h1>
+                    <h2> 株式会社スタジオジブリ </h2>
                 </header>
             </div>
         </div>

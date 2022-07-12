@@ -1,12 +1,19 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import FilmService from './services/FilmService';
 import HomePageContainer from './containers/HomePageContainer';
 import FilmContainer from './containers/FilmContainer';
+import ChartContainer from './containers/ChartContainer';
 import NavBar from './components/NavBar';
 import './App.css';
 
 function App() {
+  const [films, setFilms] = useState([]);
 
+  useEffect(() => {
+    FilmService.getFilms()
+      .then(data => setFilms(data));
+  }, [])
 
   return (
     <div className="app" style={{
@@ -16,8 +23,8 @@ function App() {
         <NavBar />
         <Routes>
           <Route exact path="/" element={<HomePageContainer />} />
-          <Route exact path="/films" element={<FilmContainer />} />
-          {/* <Route exact path="/charts" element={<Chart />} /> */}
+          <Route exact path="/films" element={<FilmContainer films={films} />} />
+          <Route exact path="/charts" element={<ChartContainer films={films} />} />
         </Routes>
       </Router>
     </div>
