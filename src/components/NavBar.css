@@ -3,7 +3,7 @@
 }
 
 .nav-bar-list-container {
-    background-color: #589ad0;
+    background-color: white;
 }
 
 .nav-bar-list {
@@ -24,7 +24,7 @@
 }
 
 .link {
-    height: 7vh;
+    height: 5vh;
     width: 10vh;
     display: flex;
     align-items: center;

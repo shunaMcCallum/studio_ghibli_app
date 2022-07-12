@@ -21,14 +21,13 @@ const FilmContainer = ({films}) => {
 
 
     return (
-        <div className="film-box">
-            <header className="page-header">
-                <img id="header-image" src="https://www.pngitem.com/pimgs/m/83-834494_studio-ghibli-logo-vector-hd-png-download.png"></img>
-            </header>
-            <FilmSelect films={films} onFilmSelect={handleFilmSelect} />
-            <div>
-                {selectedFilm ? <FilmDetails film={selectedFilm}/> : null}
+        <div className="film-container">
+            <h2 className="film-container-header">Welcome to the Film Page!</h2>
+            <p>Choose a film from the dropdown menu to view the full details.</p>
+            <div className="film-dropdown">
+                <FilmSelect films={films} onFilmSelect={handleFilmSelect} />
             </div>
+                {selectedFilm ? <FilmDetails film={selectedFilm}/> : null}
         </div>
     );
 }

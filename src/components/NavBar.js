@@ -40,7 +40,7 @@ const NavBar = () => {
                     </div>
                 </div>
                 <div className="nav-bar-img">
-                    <img src="https://cdn.imgbin.com/1/10/16/imgbin-ghibli-museum-catbus-studio-ghibli-my-neighbor-totoro-chihiro-vW4exxrSkvXMRTkq5T2uUk311.jpg" />
+                    <img src={require("../Images/pngwing.com.png")} />
                 </div>
             </div>
 
