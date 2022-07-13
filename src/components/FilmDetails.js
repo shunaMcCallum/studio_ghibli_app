@@ -18,6 +18,7 @@ const FilmDetails = ({ film }) => {
                 <p className="film-para"><b>Producer:</b> {film.producer}</p>
                 <p id="synopsis"><b>Synopsis:</b></p>
                 <p className="film-para">{film.description}</p>
+                <p className="film-para">Main characters:</p>
                 <ul>{peopleList}</ul>
             </div>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import './ChartSelect.css';
 
 const ChartSelect = ({onChartSelect}) => {
 

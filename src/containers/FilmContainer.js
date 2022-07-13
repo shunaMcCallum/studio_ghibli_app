@@ -3,10 +3,9 @@ import FilmSelect from '../components/FilmSelect';
 import FilmDetails from '../components/FilmDetails';
 import './FilmContainer.css';
 
-const FilmContainer = ({films}) => {
+const FilmContainer = ({ films }) => {
 
     const [selectedFilm, setSelectedFilm] = useState(null);
-
 
     const handleFilmSelect = ((film) => {
         const fetchPromises = film.people.map((person) => {
@@ -16,9 +15,8 @@ const FilmContainer = ({films}) => {
             .then(data => {
                 film.peopleList = data;
                 setSelectedFilm(film);
-        })
+            })
     })
-
 
     return (
         <div className="film-container">
@@ -27,7 +25,7 @@ const FilmContainer = ({films}) => {
             <div className="film-dropdown">
                 <FilmSelect films={films} onFilmSelect={handleFilmSelect} />
             </div>
-                {selectedFilm ? <FilmDetails film={selectedFilm}/> : null}
+            {selectedFilm ? <FilmDetails film={selectedFilm} /> : null}
         </div>
     );
 }
