@@ -2,6 +2,8 @@ import React from 'react';
 import './FilmDetails.css';
 
 const FilmDetails = ({ film }) => {
+
+    // here we take the list of people objects we created in the Film Container and now loop through to grab their names for dispalying on the page
     const peopleList = film.peopleList.map((person, index) => {
         return <li key={index}>{person.name}</li>
     })

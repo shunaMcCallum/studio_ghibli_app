@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import FilmChart from '../components/FilmChart';
 import ChartSelect from '../components/ChartSelect';
 import './ChartContainer.css';
 
 const ChartContainer = ({ films }) => {
-    
+
     const [selectedChart, setSelectedChart] = useState([]);
 
     const handleChartSelect = (chart) => {
@@ -18,6 +18,7 @@ const ChartContainer = ({ films }) => {
             ratings.push(film.rt_score);
         }
 
+        // pie chart requires data to be arranged into arrays - each array becomes a slice of the pie
         const array0to60 = ratings.filter(rating => rating < 61);
         const array61to70 = ratings.filter(rating => rating < 71 && rating > 60);
         const array71to80 = ratings.filter(rating => rating < 81 && rating > 70);
@@ -47,9 +48,9 @@ const ChartContainer = ({ films }) => {
 
     const lineChartData = ((films) => {
         let data = [["Release Date", "Film Length (mins)"]];
-        
+
         for (const film of films) {
-            const result = [`${ film.release_date} (${film.title})`, Number(film.running_time)]
+            const result = [`${film.release_date} (${film.title})`, Number(film.running_time)]
             data.push(result)
         }
 
@@ -60,12 +61,12 @@ const ChartContainer = ({ films }) => {
         let data = [["Title", "Release Date", "Rotten Tomato Score", "Rotten Tomato Score", "Length"]]
 
         for (const film of films) {
-            const result = [film.title, Number(film.release_date), Number(film.rt_score), Number(film.rt_score),  Number(film.running_time)]
+            const result = [film.title, Number(film.release_date), Number(film.rt_score), Number(film.rt_score), Number(film.running_time)]
             data.push(result)
         }
 
         return data;
-        
+
     })
 
 
@@ -74,6 +75,7 @@ const ChartContainer = ({ films }) => {
             <h2>Welcome to the Charts Page!</h2>
             <p>Choose a chart from the dropdown below to see some really interesting Studio Ghibli film statistics!</p>
             <ChartSelect onChartSelect={handleChartSelect} />
+            {/* charts only display if "selectedChart" contains a value - values are matched with the relevant chart in FilmSelect */}
             {selectedChart ? < FilmChart selectedChart={selectedChart} films={films} pieChartData={pieChartData}
                 scatterChartData={scatterChartData} lineChartData={lineChartData} bubbleChartData={bubbleChartData} /> : null}
         </div>

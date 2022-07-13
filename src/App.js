@@ -25,10 +25,9 @@ function App() {
           <Route exact path="/" element={<HomePageContainer />} />
           <Route exact path="/films" element={<FilmContainer films={films} />} />
           <Route exact path="/charts" element={<ChartContainer films={films} />} />
-
         </Routes>
-        <Footer />
 
+        <Footer />
       </Router>
 
     </div>
