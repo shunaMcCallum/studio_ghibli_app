@@ -32,3 +32,6 @@ RUNNING INSTRUCTIONS
       npm update
 
    And then run npm start again.
+
+LESSONS FROM THIS PROJECT:
+This mini-project was the first app I had built from scratch using ReactJS. The project built on my existing knowledge of passing data through different components of an app, as well as working with data stored in different formats.
